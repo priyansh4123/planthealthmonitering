@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Upload a leaf photo for plant disease screening." />
+    <meta name="theme-color" content="#f5f6ef" />
+    <title>Disease identifier — Fieldnotes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="disease.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js"></script>
+    <script src="disease.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Fieldnotes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M25.8 5.2C15.7 5.5 8.3 8.8 7.3 16c-.5 3.9 2.4 6.7 6.1 6.4 7.3-.6 10.1-9 12.4-17.2Z" fill="currentColor" />
+            <path d="M5.5 27c3.4-7.5 8.5-11.9 15.1-15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span>fieldnotes<span class="brand-period">.</span></span>
+      </a>
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to plant guides</a>
+    </header>
+
+    <main class="disease-page">
+      <a class="back-link mobile-back" href="index.html"><span aria-hidden="true">←</span> Back to plant guides</a>
+      <section class="disease-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> LEAF HEALTH CHECK</p>
+        <h1>Plant disease<br /><em>identifier.</em></h1>
+        <p>Upload a clear photo of a plant leaf to prepare it for disease screening.</p>
+        <span class="model-status" id="model-status"><span class="status-dot"></span> Loading disease model…</span>
+      </section>
+
+      <section class="disease-workspace" aria-label="Leaf image upload">
+        <div class="upload-panel">
+          <div class="upload-dropzone" id="leaf-dropzone">
+            <input class="sr-only" id="leaf-file" type="file" accept="image/*" />
+            <div class="upload-empty" id="upload-empty">
+              <span class="upload-icon" aria-hidden="true">＋</span>
+              <strong>Drop a leaf photo here</strong>
+              <span>or choose an image from your device</span>
+              <label class="upload-button" for="leaf-file">Choose an image</label>
+              <small>JPG, PNG, WEBP · up to 10 MB</small>
+            </div>
+            <img class="leaf-preview" id="leaf-preview" alt="Preview of the selected leaf" hidden />
+            <div class="preview-toolbar" id="preview-toolbar" hidden>
+              <span id="leaf-file-name"></span>
+              <button type="button" id="clear-leaf" aria-label="Remove selected image">Remove</button>
+            </div>
+          </div>
+          <p class="upload-message" id="upload-message" role="status">No image selected.</p>
+          <button type="button" class="analyze-button" id="analyze-leaf" disabled>
+            Analyze leaf <span aria-hidden="true">↗</span>
+          </button>
+          <section class="prediction-result" id="prediction-result" aria-live="polite" hidden>
+            <p class="prediction-eyebrow">MODEL PREDICTION</p>
+            <h2 id="prediction-title"></h2>
+            <p class="prediction-disclaimer">Predictions are estimates from this model, not a confirmed diagnosis. The model only knows its trained classes.</p>
+            <div class="prediction-list" id="prediction-list"></div>
+          </section>
+        </div>
+        <section class="treatment-panel" id="treatment-panel" aria-live="polite" hidden>
+          <p class="treatment-eyebrow">GENERAL CARE SUGGESTIONS</p>
+          <h2 id="treatment-title">Treatment guidance</h2>
+          <ul class="treatment-list" id="treatment-list"></ul>
+          <p class="treatment-caution">The model result is an estimate. Confirm the cause for your plant species before using treatments; if considering a plant-protection product, use only one approved for that plant and follow its label and local guidance.</p>
+        </section>
+        <aside class="model-note">
+          <span class="model-note-icon" aria-hidden="true">✳</span>
+          <h2>About this model</h2>
+          <p>This browser-based classifier was trained to recognize Leaf Spot, Rust, and Powdery mildew from leaf images.</p>
+          <p class="model-note-foot">For best results, use a well-lit, close-up photo with one leaf in focus. A prediction is a screening aid, not a confirmed diagnosis.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>fieldnotes<span class="brand-period">.</span></span></a>
+      <span>GROW WELL, WHEREVER YOU ARE.</span>
+      <span>Made for curious growers <span class="footer-heart">♥</span></span>
+    </footer>
+  </body>
+</html>

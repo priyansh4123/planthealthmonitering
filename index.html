@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search growing guides for eight plants and crops, with care, watering, and pest information."
+    />
+    <meta name="theme-color" content="#f5f6ef" />
+    <title>Fieldnotes — Plant guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Fieldnotes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M25.8 5.2C15.7 5.5 8.3 8.8 7.3 16c-.5 3.9 2.4 6.7 6.1 6.4 7.3-.6 10.1-9 12.4-17.2Z" fill="currentColor" />
+            <path d="M5.5 27c3.4-7.5 8.5-11.9 15.1-15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span>fieldnotes<span class="brand-period">.</span></span>
+      </a>
+      <div class="header-note"><span class="status-dot"></span> A growing guide for curious people</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <form class="search-form" id="search-form" role="search">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8" />
+                <path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <label class="sr-only" for="plant-search">Enter a plant or crop name</label>
+            <input id="plant-search" name="plant" type="search" placeholder="Try “Aloe Vera” or “corn”" autocomplete="off" />
+            <button type="submit">Find a guide <span aria-hidden="true">↗</span></button>
+            <div class="suggestions" id="suggestions" role="listbox" aria-label="Plant suggestions" hidden></div>
+          </form>
+          <p class="search-hint">Popular: <button class="hint-link" data-search="Money Plant">Money Plant</button><span>·</span><button class="hint-link" data-search="Rose">Rose</button><span>·</span><button class="hint-link" data-search="Rice">Rice</button></p>
+          <a class="disease-cta" href="disease.html">
+            <span class="disease-cta-icon" aria-hidden="true">⌕</span>
+            <span>Disease identifier</span>
+            <span class="disease-cta-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-sun"></div>
+          <div class="art-label"><span>GROW AT YOUR OWN PACE</span><span class="art-label-star">✳</span></div>
+          <svg class="hero-plant" viewBox="0 0 430 470" fill="none">
+            <path d="M201 368c-7-65-1-133 4-204M205 291c-41-57-79-81-122-104M207 255c41-52 82-75 134-86M202 329c-49-33-83-37-126-36M208 316c39-30 75-42 122-37" stroke="#355944" stroke-width="6" stroke-linecap="round"/>
+            <path d="M85 187c-18-36-58-47-73-28-14 18 2 57 43 68 22 6 36-9 30-40Z" fill="#70936F"/>
+            <path d="M218 164c15-46 61-64 80-44 17 18 4 65-42 82-25 9-44-3-38-38Z" fill="#355944"/>
+            <path d="M180 248c-31-50-74-57-88-35-13 22 12 63 58 67 25 2 41-13 30-32Z" fill="#91A985"/>
+            <path d="M235 229c24-44 67-55 82-34 14 19-4 60-47 70-23 6-40-8-35-36Z" fill="#779A72"/>
+            <path d="M75 292c-24-36-63-42-75-23-12 18 9 52 48 55 21 2 34-12 27-32Z" fill="#B5C39A"/>
+            <path d="M251 278c26-38 66-44 79-24 12 19-9 53-48 57-21 2-36-11-31-33Z" fill="#A4B891"/>
+            <path d="M193 360h78l-10 89c-1 8-7 14-15 14h-29c-8 0-14-6-15-14l-9-89Z" fill="#C77C55"/>
+            <path d="M189 361h86v18h-86z" fill="#A96243"/>
+            <path d="M203 399h58" stroke="#D99B77" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <div class="art-caption"><span class="caption-number">01</span><span>CARE THAT<br />GROWS WITH YOU</span></div>
+          <span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span>
+        </div>
+        <div class="hero-bottom">
+          <span>8 PLANTS &amp; CROPS</span><span class="hero-bottom-line"></span><span>ROOTED IN PRACTICAL KNOW-HOW</span>
+        </div>
+      </section>
+
+      <section class="guide-section" id="guides">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> YOUR FIELD GUIDE</p>
+            <h2>Find your next <em>growing thing.</em></h2>
+          </div>
+          <p class="section-description">A little knowledge goes a long way.<br /> Choose a guide to get started.</p>
+        </div>
+        <div class="filter-row" aria-label="Filter guides">
+          <button class="filter-chip is-active" data-filter="all">All guides <span>08</span></button>
+          <button class="filter-chip" data-filter="houseplant">House &amp; garden</button>
+          <button class="filter-chip" data-filter="crop">Crops</button>
+          <span class="guide-count" id="guide-count">Showing 8 guides</span>
+        </div>
+        <div class="plant-grid" id="plant-grid"></div>
+      </section>
+
+      <section class="result-section" id="result-section" aria-live="polite" hidden>
+        <div class="result-topline">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE GROWING GUIDE</p>
+          <button class="close-result" id="close-result" aria-label="Close plant details">Close <span>×</span></button>
+        </div>
+        <div id="plant-detail"></div>
+      </section>
+
+      <section class="comparison-section">
+        <div class="comparison-heading">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A QUICK COMPARISON</p>
+          <h2>Different roots.<br /><em>Different needs.</em></h2>
+          <p>Water needs are relative, not fixed. Weather, soil, plant age and growing method all make a difference.</p>
+        </div>
+        <div class="comparison-table-wrap">
+          <table>
+            <thead><tr><th>Plant or crop</th><th>Water need</th><th>Best conditions</th><th>Keep an eye on</th></tr></thead>
+            <tbody id="comparison-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grow-note">
+        <div class="note-icon" aria-hidden="true">✳</div>
+        <div><p class="eyebrow">A NOTE BEFORE YOU GROW</p><h2>Start with what your plant <em>is telling you.</em></h2></div>
+        <p>Check soil moisture before watering, match sunlight to the plant, and use fertilizer thoughtfully. For crop-specific schedules, your local agricultural extension service can help you adapt to your region.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">✳</span><span>fieldnotes<span class="brand-period">.</span></span></a>
+      <span>GROW WELL, WHEREVER YOU ARE.</span>
+      <span>Made for curious growers <span class="footer-heart">♥</span></span>
+    </footer>
+  </body>
+</html>

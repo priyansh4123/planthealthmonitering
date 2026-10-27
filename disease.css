@@ -1,0 +1,82 @@
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: #647261; text-decoration: none; font-size: 11px; }
+.back-link:hover { color: var(--green-dark); }
+.back-link span { font-size: 16px; }
+.mobile-back { display: none; }
+.disease-page { max-width: 1050px; min-height: calc(100vh - 171px); margin: 0 auto; padding: 73px 36px 86px; }
+.disease-heading { max-width: 580px; margin: 0 auto 32px; text-align: center; }
+.disease-heading .eyebrow { justify-content: center; }
+.disease-heading h1 { margin: 20px 0 12px; font-size: clamp(42px, 6vw, 66px); line-height: 1.03; letter-spacing: -.06em; font-weight: 600; }
+.disease-heading h1 em { font-family: Georgia, serif; color: #718868; font-weight: 400; }
+.disease-heading > p:not(.eyebrow) { margin: 0 auto 17px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.model-status { display: inline-flex; align-items: center; padding: 8px 10px; border: 1px solid #e5dfcd; border-radius: 20px; background: #f7f4e9; color: #7d704a; font-size: 9px; }
+.model-status .status-dot { width: 6px; height: 6px; background: #c2a756; }
+.model-status.is-error { border-color: #e7d2ca; background: #f9efea; color: #9b5145; }
+.model-status.is-error .status-dot { background: #b96c57; }
+.disease-workspace { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr .85fr; align-items: stretch; gap: 17px; }
+.disease-workspace > .upload-panel { grid-column: 1; grid-row: 1 / span 2; }
+.disease-workspace > .treatment-panel, .disease-workspace > .model-note { grid-column: 2; }
+.disease-workspace > .treatment-panel { grid-row: 1; }
+.disease-workspace > .model-note { grid-row: 2; }
+.upload-panel { min-width: 0; padding: 16px; border: 1px solid #e5e8df; border-radius: 7px; background: var(--white); box-shadow: 0 10px 30px rgba(41, 65, 45, .05); }
+.upload-dropzone { position: relative; min-height: 280px; padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; border: 1px dashed #b6c4ac; border-radius: 6px; background: #fafbf7; text-align: center; transition: border-color .2s, background .2s; }
+.upload-dropzone.is-dragging { border-color: var(--green); background: #edf2e8; }
+.upload-empty { display: flex; flex-direction: column; align-items: center; }
+.upload-empty[hidden], .preview-toolbar[hidden] { display: none; }
+.upload-icon { width: 42px; height: 42px; margin-bottom: 12px; display: grid; place-items: center; border-radius: 50%; background: #e8eee1; color: #617c5b; font-size: 23px; }
+.upload-empty strong { color: #3d5140; font-size: 13px; font-weight: 600; }
+.upload-empty > span:not(.upload-icon) { margin-top: 6px; color: #899385; font-size: 11px; }
+.upload-button { margin-top: 15px; padding: 9px 13px; border: 1px solid #c9d4c1; border-radius: 4px; color: #38533f; font-size: 10px; font-weight: 600; cursor: pointer; }
+.upload-button:hover { background: #eef2e8; }
+.upload-empty small { margin-top: 12px; color: #9aa194; font-size: 8px; letter-spacing: .04em; }
+.leaf-preview { max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 4px; }
+.leaf-preview[hidden] { display: none; }
+.preview-toolbar { width: 100%; margin-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; color: #657261; font-size: 9px; }
+.preview-toolbar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.preview-toolbar button { flex: 0 0 auto; padding: 5px 8px; border: 0; border-radius: 3px; background: #edf1e8; color: #526a51; font-size: 9px; cursor: pointer; }
+.upload-message { min-height: 16px; margin: 9px 0; color: #7a8576; font-size: 9px; line-height: 1.5; }
+.upload-message.is-error { color: #9b5145; }
+.analyze-button { width: 100%; min-height: 42px; display: flex; justify-content: center; align-items: center; gap: 9px; border: 0; border-radius: 4px; background: var(--green-dark); color: white; font-size: 11px; font-weight: 600; }
+.analyze-button:disabled { background: #b6c0b1; color: #f8faf5; cursor: not-allowed; }
+.model-note { padding: 24px; display: flex; flex-direction: column; justify-content: center; border: 1px solid #e4e8dc; border-radius: 6px; background: #eef2e8; }
+.model-note-icon { display: grid; width: 32px; height: 32px; margin-bottom: 15px; place-items: center; border-radius: 50%; background: #dce6d3; color: #708465; font-size: 17px; }
+.model-note h2 { margin: 0 0 10px; color: #394e3d; font-size: 16px; letter-spacing: -.025em; }
+.model-note p { margin: 0; color: #6f7a6b; font-size: 11px; line-height: 1.8; }
+.model-note .model-note-foot { margin-top: 15px; padding-top: 13px; border-top: 1px solid #dce3d5; color: #879082; font-size: 10px; }
+.treatment-panel { padding: 21px; border: 1px solid #dfe6d8; border-radius: 6px; background: #f5f7f0; }
+.treatment-panel[hidden] { display: none; }
+.treatment-eyebrow { margin: 0 0 8px; color: #87927f; font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+.treatment-panel h2 { margin: 0 0 13px; color: #344c39; font-size: 16px; letter-spacing: -.025em; }
+.treatment-list { margin: 0; padding: 0; list-style: none; }
+.treatment-list li { position: relative; margin: 0 0 10px; padding-left: 15px; color: #647160; font-size: 10px; line-height: 1.65; }
+.treatment-list li:last-child { margin-bottom: 0; }
+.treatment-list li::before { position: absolute; top: 6px; left: 0; width: 5px; height: 5px; border-radius: 50%; background: #91a778; content: ""; }
+.treatment-caution { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid #e1e7db; color: #879082; font-size: 9px; line-height: 1.65; }
+.prediction-result { margin-top: 18px; padding: 17px; border: 1px solid #dfe6d8; border-radius: 5px; background: #f5f7f0; }
+.prediction-result[hidden] { display: none; }
+.prediction-eyebrow { margin: 0 0 7px; color: #87927f; font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+.prediction-result h2 { margin: 0 0 7px; color: #344c39; font-size: 20px; letter-spacing: -.04em; }
+.prediction-disclaimer { margin: 0 0 14px; color: #788273; font-size: 9px; line-height: 1.6; }
+.prediction-list { display: grid; gap: 10px; }
+.prediction-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 5px 12px; }
+.prediction-label, .prediction-score { color: #596953; font-size: 9px; }
+.prediction-score { font-weight: 600; }
+.prediction-track { grid-column: 1 / -1; height: 5px; overflow: hidden; border-radius: 5px; background: #e2e8dc; }
+.prediction-fill { display: block; height: 100%; border-radius: inherit; background: #78906c; }
+@media (max-width: 700px) {
+  .site-header { padding: 0 21px; }
+  .site-header > .back-link { display: none; }
+  .mobile-back { display: inline-flex; margin-bottom: 32px; }
+  .disease-page { min-height: calc(100vh - 166px); padding: 25px 21px 55px; }
+  .disease-heading { margin-bottom: 24px; text-align: left; }
+  .disease-heading .eyebrow { justify-content: flex-start; }
+  .disease-heading h1 { font-size: 48px; }
+  .disease-heading > p:not(.eyebrow) { margin-left: 0; font-size: 12px; }
+  .disease-workspace { grid-template-columns: 1fr; }
+  .disease-workspace > .upload-panel, .disease-workspace > .treatment-panel, .disease-workspace > .model-note { grid-column: 1; grid-row: auto; }
+  .upload-panel { padding: 11px; }
+  .upload-dropzone { min-height: 235px; }
+  .leaf-preview { max-height: 210px; }
+  .model-note { padding: 19px; }
+  .model-note-icon { margin-bottom: 11px; }
+  .site-footer { padding: 18px 21px; }
+}
